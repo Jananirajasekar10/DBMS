@@ -1,0 +1,22 @@
+CREATE TABLE Bank (
+  Cname varchar2(20),
+  Cid INTEGER,
+  Balance INTEGER,
+  Acctype varchar2(20),
+  Ccity char(10)
+);
+
+
+INSERT INTO Bank VALUES ('Krishiya',003 ,50000 , 'Savings', 'Chennai');
+INSERT INTO Bank VALUES ('Jaga',008 ,75000 , 'Savings', 'Salem');
+INSERT INTO Bank VALUES ('Thenmozhi', 005, 30000, 'Savings', 'Erode');
+INSERT INTO Bank VALUES ('Karikalan',007 , 80000, 'Savings', 'Namakkal');
+
+
+CREATE VIEW view_Bank AS SELECT * FROM Bank;
+
+UPDATE Bank SET Ccity='Erode' WHERE Cid=003;
+
+UPDATE Bank SET Ccity='Salem' WHERE Cid=007;
+SELECT * FROM Bank;
+DROP VIEW view_Bank;

@@ -1,0 +1,10 @@
+CREATE TABLE
+DEPT (
+DEPTNO integer PRIMARY KEY,
+DRAME varchar (20),
+LOCATION varchar(15)
+);
+CREATE TABLE EMP
+(EMPNO integer , 
+DEPTN integer REFERENCES DEPT(DEPTNO), 
+DESIGN varchar(10)) ;

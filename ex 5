@@ -1,0 +1,36 @@
+create table client(
+
+Clientno number(5) PRIMARY KEY,
+
+Cname varchar2(15) NOT NULL,
+City char(10),
+State char(10),
+Pincode number(6),
+Productid number(5),
+Noofproductsold number(5),
+Purchasedate date,
+Balance number(6,2)
+CHECK(Balance<100000));create table Product(
+Productid number(5) PRIMARY KEY,
+Productname varchar2(15) NOT NULL,
+Qtyavailable char(10),
+Costprice number(5,2));
+insert into Client values('11','RAHUL','KOVAI','TamilNadu','209.78','4563','100', '2020-09-30','3000'),
+ ('12','VISHNU','SALEM','Kerala','986.84','3784','350','2019-10-09','50000'),
+ ('13','VISHAL','CHENNAI','GOA','643.42','3673','270','2018-05-03','75000');
+select*from CLIENT;
+insert into Product values('4563','BAG','4','2500.19'),
+ ('3784','SLIPPER','8','1280.78'),
+ ('1234','BOOKS','10','3003.08');
+select*from PRODUCT;
+select cname from CLIENT
+where noofproductsold < (select avg(noofproductsold) 
+from CLIENT);
+select cname from CLIENT 
+inner join PRODUCT
+on(CLIENT.productid=PRODUCT.productid)
+where costprice>=(select max(costprice) 
+from PRODUCT);
+select productname from PRODUCT 
+where qtyavailable>=(select max(qtyavailable) 
+from PRODUCT);

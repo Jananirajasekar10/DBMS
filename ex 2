@@ -1,0 +1,26 @@
+create table employee(
+ Empno varchar(8),
+ Ename varchar(20),
+ job varchar(30),
+ Salery integer,
+ Deptno integer,
+ Date_of_joining varchar(20));
+
+ insert into employee VALUES('1','Rahul','Teacher','5000','10',"8-5-2003"),
+ ('2','Vishnu','Doctor','100000','14',"14-10-2000"),('3','Vishal','Admin','40000','12',"11-11-2005");
+
+ select * from employee;
+
+ update employee set job='Design';
+ select * from employee;
+
+ alter table employee rename to EMP_TABLE;
+ select * from EMP_TABLE;
+
+ delete from EMP_TABLE where Deptno='10';
+ select * from EMP_TABLE;
+
+ truncate EMP_TABLE;
+ select * from EMP_TABLE;
+
+ drop table EMP_TABLE;
